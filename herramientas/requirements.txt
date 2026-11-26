@@ -1,0 +1,9 @@
+# Motor de OCR: los modelos PP-OCRv6 de PaddleOCR vienen dentro del paquete (unos 30 MB)
+rapidocr>=3.10,<4
+onnxruntime
+# Leer PDF y convertir sus páginas en imágenes
+pymupdf>=1.24,<2
+pillow
+# Tablas y Excel
+pandas
+openpyxl

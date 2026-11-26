@@ -1,0 +1,15 @@
+# Lo que produce el OCR: cada alumno genera el suyo
+salidas/*
+!salidas/.gitkeep
+
+# Documentos propios de los alumnos (los ejemplos sí se versionan)
+documentos/*
+!documentos/README.md
+!documentos/ejemplos/
+
+# Entornos y basura del sistema
+.venv/
+venv/
+__pycache__/
+.DS_Store
+~$*
