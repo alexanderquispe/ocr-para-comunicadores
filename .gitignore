@@ -1,11 +1,18 @@
-# Lo que produce el OCR: cada alumno genera el suyo
+# Lo que producen el OCR y la transcripción: cada alumno genera el suyo
 salidas/*
 !salidas/.gitkeep
 
-# Documentos propios de los alumnos (los ejemplos sí se versionan)
+# Documentos y audios propios de los alumnos (los ejemplos sí se versionan)
 documentos/*
 !documentos/README.md
 !documentos/ejemplos/
+audio/*
+!audio/README.md
+!audio/ejemplos/
+
+# Modelos de voz: se bajan la primera vez (más de 800 MB)
+modelos/*
+!modelos/README.md
 
 # Entornos y basura del sistema
 .venv/

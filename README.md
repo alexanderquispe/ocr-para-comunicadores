@@ -43,6 +43,28 @@ Están en `documentos/ejemplos/`, ordenados de fácil a casi imposible.
 | `05_acta_independencia.pdf` | Acta de la Independencia (1821) | El límite: un manuscrito que el OCR no puede leer |
 | `06_licitacion_ilo.pdf` | Portada de las bases de una licitación pública (SEACE, 2026) | La página viene girada; ojo con la errata del original |
 
+## Audio: de la voz al texto
+
+La segunda parte del curso usa la misma lógica con grabaciones: entrevistas, conferencias de
+prensa, audios de WhatsApp o videos. Las transcribe **Whisper** en tu computadora y Claude
+trabaja con el texto: busca citas, separa a quienes hablan, arma subtítulos y tablas.
+
+1. Pega el primer pedido de audio:
+
+   > Lee el archivo CLAUDE.md de esta carpeta y prepara todo para transcribir audio. Cuando termines, dime si la prueba funcionó.
+
+   La primera vez baja el modelo de transcripción (814 MB) y puede tardar varios minutos.
+2. Sigue con los pedidos de [`guias/pedidos-audio.md`](guias/pedidos-audio.md).
+3. Los audios de práctica y los consejos para grabar están en [`audio/README.md`](audio/README.md).
+   Tus grabaciones van en la carpeta `audio/`.
+
+Por cada audio, Claude deja en `salidas/` la transcripción con el minuto y segundo de cada
+frase, los subtítulos (`.srt`), una tabla de palabras con su probabilidad y un resumen con los
+fragmentos dudosos y, si lo pides, cuánto habla cada persona.
+
+Claude no puede escuchar: lee lo que escribió Whisper. **Cada cita se escucha en su minuto
+antes de publicarla.**
+
 ## Trae tus propios documentos
 
 Déjalos en la carpeta `documentos/`. Funcionan PDF (escaneados o no) e imágenes (JPG, PNG).
@@ -86,6 +108,13 @@ servidores de Anthropic, como cualquier conversación con Claude.
 
 El motor está en `herramientas/ocr.py` y las instrucciones que sigue Claude, en `CLAUDE.md`.
 
+El audio lo transcribe **Whisper large-v3-turbo** (de OpenAI, abierto) con
+[faster-whisper](https://github.com/SYSTRAN/faster-whisper), también en tu computadora. Para
+separar a quienes hablan se usa un modelo de huellas de voz de
+[3D-Speaker](https://github.com/modelscope/3D-Speaker) con
+[sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx). Los modelos se bajan una sola vez a la
+carpeta `modelos/`. El motor está en `herramientas/audio.py`.
+
 ## Si algo no funciona
 
 - **Claude no puede instalar el OCR.** Pídele: *«Lee tú las páginas mirando las imágenes
@@ -93,5 +122,9 @@ El motor está en `herramientas/ocr.py` y las instrucciones que sigue Claude, en
 - **El documento es muy largo.** Pide primero cinco páginas.
 - **El texto sale como basura.** Puede estar girado, ser un manuscrito o tener poca
   resolución. Pregúntale a Claude qué pasó y qué propone.
+- **No se baja el modelo de audio.** Si un compañero ya lo tiene, copia su carpeta `modelos/`
+  dentro de la tuya. También puedes pedir el modelo rápido (484 MB).
+- **La transcripción va muy lenta.** Pide un tramo (*«solo del minuto 2 al 5»*) o el modelo
+  rápido.
 
-Los créditos de las imágenes están en [`CREDITOS.md`](CREDITOS.md).
+Los créditos de las imágenes y los audios están en [`CREDITOS.md`](CREDITOS.md).

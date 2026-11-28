@@ -20,6 +20,21 @@
 3. Un error del OCR que encontraron y cómo lo detectaron.
 4. Cuánto confían en el dato final y por qué.
 
+### Si trabajan con audio
+
+El mismo plan, con estos cambios:
+
+1. **Elijan un audio** de hasta 10 minutos: uno propio (una entrevista, una conferencia, un
+   audio de WhatsApp con permiso) o uno de `audio/ejemplos/`.
+2. **Muestra:** los dos primeros minutos. Antes, díganle a Claude cuántas personas hablan y
+   qué nombres propios, lugares o siglas aparecen.
+3. **Completo y tabla:** la transcripción con los hablantes separados y una tabla con las
+   cinco citas más importantes, cada una con su minuto.
+4. **Verificación:** escuchen cada cita en su minuto. Busquen un error: un nombre mal escrito,
+   una frase cortada, un hablante equivocado o algo que nadie dijo.
+
+Entregan lo mismo: la tabla de citas, un hallazgo, un error y cuánto confían en las citas.
+
 ## Hora de presentaciones
 
 **5 minutos por grupo y 2 de preguntas.** Sigan este orden:

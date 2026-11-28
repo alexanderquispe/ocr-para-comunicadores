@@ -1,0 +1,10 @@
+# Transcripción: Whisper sobre CTranslate2, en CPU. El modelo se baja una vez a la carpeta modelos/
+faster-whisper>=1.1,<2
+# Lee mp3, m4a, ogg, wav, mp4 y casi cualquier audio o video (trae su propio ffmpeg)
+av>=12,<17
+# ¿Quién habla? Huellas de voz con un modelo ONNX de 40 MB
+sherpa-onnx>=1.12,<3
+numpy
+# Tablas y Excel
+pandas
+openpyxl
